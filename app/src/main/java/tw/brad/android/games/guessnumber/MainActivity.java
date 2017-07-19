@@ -7,20 +7,25 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button guess;
+    private View guess;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        guess = (Button)findViewById(R.id.guess);
+        guess = findViewById(R.id.guess);
         guess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("brad", "OK");
+                Log.i("brad", "OK2");
             }
         });
 
     }
+
+    public void reset(View view){
+
+    }
+
 }

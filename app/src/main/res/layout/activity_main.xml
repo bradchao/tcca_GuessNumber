@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             android:text="Reset"
             android:layout_weight="1"
+            android:onClick="reset"
             />
         <Button
             android:id="@+id/setting"
@@ -50,6 +51,7 @@
             android:layout_height="wrap_content"
             android:text="Setting"
             android:layout_weight="1"
+            android:onClick="reset"
             />
         <Button
             android:id="@+id/help"
