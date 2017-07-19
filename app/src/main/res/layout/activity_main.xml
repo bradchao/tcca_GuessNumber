@@ -20,6 +20,7 @@
             android:layout_alignParentTop="true"
             />
         <EditText
+            android:id="@+id/input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -37,18 +38,21 @@
         android:layout_alignParentBottom="true"
         >
         <Button
+            android:id="@+id/reset"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Reset"
             android:layout_weight="1"
             />
         <Button
+            android:id="@+id/setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Setting"
             android:layout_weight="1"
             />
         <Button
+            android:id="@+id/help"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Help"
@@ -58,6 +62,7 @@
 
     <!-- Log -->
     <TextView
+        android:id="@+id/log"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ff0"
