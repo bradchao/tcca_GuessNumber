@@ -8,6 +8,7 @@
     tools:context="tw.brad.android.games.guessnumber.MainActivity">
     <!-- top -->
     <RelativeLayout
+        android:id="@+id/topPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
@@ -29,6 +30,7 @@
     </RelativeLayout>
     <!-- bottom -->
     <LinearLayout
+        android:id="@+id/funcLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -55,5 +57,12 @@
     </LinearLayout>
 
     <!-- Log -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff0"
+        android:layout_below="@id/topPanel"
+        android:layout_above="@id/funcLine"
+        />
 
 </RelativeLayout>
