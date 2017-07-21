@@ -1,5 +1,6 @@
 package tw.brad.android.games.guessnumber;
 
+import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -51,8 +52,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void reset(View view){
-
+        showDialog();
     }
+
+    private void showDialog(){
+        AlertDialog alert = null;
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("WINNER");
+        builder.setMessage("恭喜老爺, 賀喜夫人");
+        builder.setCancelable(false);
+
+
+        alert = builder.create();
+
+        alert.show();
+    }
+
 
     private String createAnswer(){
         HashSet<Integer> set = new HashSet<>();
