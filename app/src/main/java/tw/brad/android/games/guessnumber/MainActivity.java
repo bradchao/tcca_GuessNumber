@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private String answer;
     private EditText input;
     private TextView log;
+    private int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         log = (TextView)findViewById(R.id.log);
 
         answer = createAnswer();
-        Log.i("brad", answer);
+        //Log.i("brad", answer);
 
         guess = findViewById(R.id.guess);
         guess.setOnClickListener(new View.OnClickListener() {
@@ -40,12 +41,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void doGuess(){
+        i++;
         String strInput = input.getText().toString();
 
         // 檢查幾A幾B
         String result = checkAB(strInput);
 
-        log.append(strInput + " => " + result + "\n");
+        log.append(i + ". " + strInput + " => " + result + "\n");
+
+        if (result.equals("3A0B")){
+            // WINNER
+            showDialog(true);
+        }else if (i == 10){
+            // Loser
+            showDialog(false);
+        }
+
 
         input.setText("");
 
