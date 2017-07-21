@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.HashSet;
+
 public class MainActivity extends AppCompatActivity {
     private View guess;
     private String answer;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         log = (TextView)findViewById(R.id.log);
 
         answer = createAnswer();
+        Log.i("brad", answer);
 
         guess = findViewById(R.id.guess);
         guess.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         String strInput = input.getText().toString();
 
         // 檢查幾A幾B
-        String result = checkAB();
+        String result = checkAB(strInput);
 
         log.append(strInput + " => " + result + "\n");
 
@@ -52,10 +55,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String createAnswer(){
-        return "175";
+        HashSet<Integer> set = new HashSet<>();
+        while (set.size()<3){
+            set.add((int)(Math.random()*10));
+        }
+        StringBuffer sb = new StringBuffer();
+        for (Integer i : set){
+            sb.append(i.toString());
+        }
+
+        return sb.toString();
     }
-    private String checkAB(){
-        return "1A2B";
+    private String checkAB(String guess){
+        int A, B; A = B = 0;
+        for (int i=0; i<answer.length(); i++){
+            if (answer.charAt(i) == guess.charAt(i)){
+                A++;
+            }else if (answer.indexOf(guess.charAt(i)) != -1){
+                B++;
+            }
+        }
+
+        return A + "A" + B+ "B";
     }
 
 }
