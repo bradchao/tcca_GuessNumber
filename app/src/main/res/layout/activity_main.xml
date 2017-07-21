@@ -70,6 +70,9 @@
         android:background="#ff0"
         android:layout_below="@id/topPanel"
         android:layout_above="@id/funcLine"
+        android:textSize="36sp"
+        android:textColor="#f00"
+        android:textStyle="bold|italic"
         />
 
 </RelativeLayout>
